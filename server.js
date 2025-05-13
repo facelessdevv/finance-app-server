@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const client = new Client({
-  host: 'postgresql://tida2025:axPTKHzFfM4BZToMoNe6afkn3YBQirgW@dpg-d0hmhreuk2gs73eod4u0-a/tida',
-  port: '5432',
-  user: 'tida2025',
-  password: 'axPTKHzFfM4BZToMoNe6afkn3YBQirgW',
-  database: 'Tida_Database',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 5432,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   ssl: {
     rejectUnauthorized: false
   }
